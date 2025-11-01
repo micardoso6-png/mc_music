@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MC Music — Banda ao Vivo</title>
+  <meta name="description" content="MC Music — espetáculos ao vivo, eventos corporativos e festas. Som, luz e energia em palco.">
+  <meta property="og:title" content="MC Music — Banda ao Vivo">
+  <meta property="og:description" content="Shows ao vivo em Portugal. Contactos, redes sociais e pedidos de orçamento.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/slide1.svg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/slide1.svg" as="image">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="logo">MC<span>Music</span></a>
+      <input type="checkbox" id="menu-toggle" aria-label="Abrir menu">
+      <label for="menu-toggle" class="burger" aria-hidden="true">☰</label>
+      <nav>
+        <a href="#home">Início</a>
+        <a href="#sobre">Quem somos</a>
+        <a href="#contactos">Contactos</a>
+        <a href="#orcamento" class="btn">Pedido de Orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero" aria-label="Galeria de fotos">
+      <div class="carousel" aria-live="polite">
+        <div class="slide active"><img src="assets/slide1.svg" alt="MC Music ao vivo — foto 1"></div>
+        <div class="slide"><img src="assets/slide2.svg" alt="MC Music ao vivo — foto 2"></div>
+        <div class="slide"><img src="assets/slide3.svg" alt="MC Music ao vivo — foto 3"></div>
+        <div class="slide"><img src="assets/slide4.svg" alt="MC Music ao vivo — foto 4"></div>
+        <div class="slide"><img src="assets/slide5.svg" alt="MC Music ao vivo — foto 5"></div>
+        <button class="ctrl prev" aria-label="Anterior">‹</button>
+        <button class="ctrl next" aria-label="Seguinte">›</button>
+        <div class="dots" role="tablist" aria-label="Selecionar imagem da galeria"></div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2>Quem somos</h2>
+        <p>
+          A <strong>MC Music</strong> é uma banda portuguesa especializada em
+          <em>espetáculos ao vivo</em> para festas, arraiais e eventos corporativos.
+          Trazemos um repertório moderno, produção técnica própria (som & luz) e uma
+          presença em palco que contagia.
+        </p>
+        <ul class="bullets">
+          <li>Reportório versátil: pop, rock, pimba, hits atuais e clássicos.</li>
+          <li>Equipa completa de músicos, bailarinas e técnicos.</li>
+          <li>Palco móvel, LED wall e sistemas de som profissionais.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contactos" class="section alt">
+      <div class="container grid-2">
+        <div>
+          <h2>Contactos & Redes</h2>
+          <p>Fala connosco para datas, cachets e rider técnico.</p>
+          <p class="contact-lines">
+            <strong>Telefone/WhatsApp:</strong> <a href="https://wa.me/351900000000" target="_blank" rel="noopener">+351 900 000 000</a><br>
+            <strong>Email:</strong> <a href="mailto:booking@mcmusic.pt">booking@mcmusic.pt</a><br>
+            <strong>Instagram:</strong> <a href="https://instagram.com/mcmusic" target="_blank" rel="noopener">@mcmusic</a><br>
+            <strong>Facebook:</strong> <a href="https://facebook.com/mcmusic" target="_blank" rel="noopener">/mcmusic</a>
+          </p>
+          <p class="note">Substituir pelos links reais quando publicar.</p>
+        </div>
+        <div class="card">
+          <h3>Disponibilidade rápida</h3>
+          <p>Precisas de uma data específica? Vai direto ao formulário.</p>
+          <a class="btn wide" href="#orcamento">Pedir Orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="orcamento" class="section">
+      <div class="container">
+        <h2>Pedido de Orçamento</h2>
+        <p>Preenche o formulário e respondemos com proposta personalizada.</p>
+
+        <!-- ACTION: Trocar o endpoint por FormSubmit/Formspree/Netlify (ver README) -->
+        <form id="quote-form" method="POST" action="" novalidate>
+          <div class="grid-form">
+            <label>Nome*
+              <input type="text" name="nome" placeholder="O teu nome" required>
+            </label>
+            <label>Email*
+              <input type="email" name="email" placeholder="email@exemplo.pt" required>
+            </label>
+            <label>Contacto*
+              <input type="tel" name="telefone" placeholder="+351 ..." required>
+            </label>
+            <label>Data do Evento*
+              <input type="date" name="data" required>
+            </label>
+            <label>Localidade*
+              <input type="text" name="localidade" placeholder="Cidade/Concelho" required>
+            </label>
+            <label>Mensagem
+              <textarea name="mensagem" rows="4" placeholder="Tipo de evento, horário, necessidades técnicas..."></textarea>
+            </label>
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="_website" class="hp" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consent" required>
+            Concordo em ser contactado pela MC Music com base neste pedido.
+          </label>
+
+          <div class="form-actions">
+            <button type="submit" class="btn">Enviar pedido</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> MC Music. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
